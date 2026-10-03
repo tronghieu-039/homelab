@@ -7,3 +7,15 @@ services:
     volumes:
       - ./html/index.html:/usr/share/nginx/html/index.html
     restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana-monitor
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    restart: unless-stopped
+
+volumes:
+  grafana_data:
