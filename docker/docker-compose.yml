@@ -4,4 +4,6 @@ services:
     container_name: nginx-web
     ports:
       - "80:80"
+    volumes:
+      - ./html/index.html:/usr/share/nginx/html/index.html
     restart: unless-stopped
